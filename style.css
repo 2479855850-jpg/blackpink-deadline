@@ -37,12 +37,9 @@ body {
 ─────────────────────────────────────────────── */
 #rotate-overlay { display: none; }
 
-/* Fire overlay when phone is in portrait OR when viewport is too narrow
-   for the landscape desktop layout (covers rotated Android landscape at
-   odd sizes, split-screen mode, etc.) */
-@media (orientation: portrait) and (max-width: 900px),
-       (max-width: 640px) {
-  html.force-rotate, body.force-rotate { overflow: hidden !important; height: 100%; }
+/* Only fire overlay in PORTRAIT on phone-sized screens.
+   Landscape always shows the full site so the user can scroll. */
+@media (orientation: portrait) and (max-width: 900px) {
   #rotate-overlay {
     display: flex;
     position: fixed;
@@ -55,8 +52,9 @@ body {
     text-align: center;
     padding: calc(40px + env(safe-area-inset-top)) 28px calc(40px + env(safe-area-inset-bottom));
   }
-  /* Freeze the page underneath so it doesn't scroll/play while hidden. */
-  html, body { overflow: hidden !important; height: 100%; }
+  /* Freeze the page underneath so it doesn't scroll/play while hidden.
+     Scoped to body only — locking html breaks iOS Safari touch scrolling. */
+  body { overflow: hidden; position: fixed; width: 100%; top: 0; left: 0; }
   .ro-inner { display: flex; flex-direction: column; align-items: center; gap: 28px; max-width: 320px; }
   .ro-phone {
     width: 80px; height: 140px;
@@ -169,7 +167,6 @@ nav.nav-light #lang-btn:hover { border-color: var(--pink); color: var(--pink); }
   position: absolute; top: 0; left: 50%;
   transform: translateX(-50%);
   width: 100vw; height: 100vh;
-  height: 100dvh;
   border-radius: 0; overflow: hidden;
   will-change: width, height, top, border-radius, opacity;
 }
@@ -238,7 +235,7 @@ nav.nav-light #lang-btn:hover { border-color: var(--pink); color: var(--pink); }
   100% { transform: scaleY(0); opacity: 0; }
 }
 
-#scroll-trigger { height: 100vh; height: 100dvh; }
+#scroll-trigger { height: 100vh; }
 
 
 /* ═══════════════════════════════════════
