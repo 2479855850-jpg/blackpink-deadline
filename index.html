@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLACKPINK — DEADLINE World Tour 2025</title>
+  <meta name="description" content="BLACKPINK 공식 팬 페이지 — 지수, 제니, 로제, 리사. DEADLINE 월드투어 2025, 디스코그래피, 브랜드 앰배서더 정보." />
+  <meta name="keywords" content="BLACKPINK, 블랙핑크, Jisoo, Jennie, Rose, Lisa, DEADLINE, World Tour, K-pop, YG Entertainment" />
+  <meta name="author" content="BLACKPINK Fan Page" />
+  <meta name="theme-color" content="#FF1E6E" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BLACKPINK — DEADLINE World Tour 2025" />
+  <meta property="og:description" content="BLACKPINK 공식 팬 페이지 · Jisoo · Jennie · Rosé · Lisa" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BLACKPINK — DEADLINE World Tour 2025" />
+  <meta name="twitter:description" content="BLACKPINK Fan Page · Jisoo · Jennie · Rosé · Lisa" />
+
+  <!-- Favicon (inline SVG, no extra file needed) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='900' text-anchor='middle' fill='%23FF1E6E'%3EBP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts: Google Fonts with China-accessible mirror fallback -->
+  <link href="https://fonts.loli.net/css2?family=Cinzel:wght@400;600;900&family=Barlow+Condensed:wght@100;200;300;400;700&display=swap" rel="stylesheet" onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Barlow+Condensed:wght@100;200;300;400;700&display=swap';" />
+  <link rel="stylesheet" href="style.css?v=18" />
+</head>
+<body>
+
+  <!-- Rotate-to-landscape overlay (mobile portrait only) -->
+  <div id="rotate-overlay" aria-hidden="true">
+    <div class="ro-inner">
+      <div class="ro-phone" aria-hidden="true">
+        <div class="ro-phone-body"></div>
+      </div>
+      <div class="ro-title">휴대폰을 가로로 돌려주세요</div>
+      <div class="ro-sub">Rotate your device · 请旋转至横屏观看</div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <a class="nav-logo" href="#">BLACK<span>PINK</span></a>
+    <ul class="nav-links">
+      <li><a href="#section-about" data-i18n="nav-about">소개</a></li>
+      <li><a href="#section-gallery" data-i18n="nav-members">멤버</a></li>
+      <li><a href="#section-tour" data-i18n="nav-tour">투어</a></li>
+      <li><a href="#section-disco" data-i18n="nav-music">음악</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="music-btn" aria-label="Play Music">
+        <svg class="mb-wave" viewBox="0 0 28 16" width="16" height="10">
+          <path d="M2 10 Q4 2, 7 8 T14 6 T21 8 T26 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button id="lang-btn"><span id="lang-label">한국어</span></button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       STICKY VIDEO HERO
+  ═══════════════════════════════════════ -->
+  <div id="sticky-wrap">
+    <div id="video-card">
+      <video id="bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+      <div class="v-vign"></div>
+      <div id="hero-text">
+        <div class="ht-label" data-i18n="ht-label">Seoul &middot; YG Entertainment &middot; Est. 2016</div>
+        <h1 class="ht-title">
+          <span class="t-white">BLACK</span>
+          <span class="t-pink">PINK</span>
+          <span class="t-outline" data-i18n="ht-tour">DEADLINE WORLD TOUR</span>
+        </h1>
+        <p class="ht-members" data-i18n="ht-members">Jisoo &nbsp;&middot;&nbsp; Jennie &nbsp;&middot;&nbsp; Ros&eacute; &nbsp;&middot;&nbsp; Lisa</p>
+      </div>
+      <div class="scroll-hint" id="scroll-hint">
+        <span>Scroll</span>
+        <div class="hint-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="scroll-trigger"></div>
+
+
+  <!-- ═══════════════════════════════════════
+       PAGE 2 — ABOUT / MEMBERS / TOUR
+  ═══════════════════════════════════════ -->
+  <section id="section-about" class="page2">
+
+    <div class="p2-photobg">
+      <img
+        src="https://wallpapercave.com/wp/wp5425905.jpg"
+        onerror="this.src='https://wallpapercave.com/wp/wp8808956.jpg'"
+        alt="BLACKPINK"
+      />
+    </div>
+
+    <div class="danmaku-wrap danmaku-wrap--top">
+      <div class="danmaku-row danmaku-row--1">
+        <div class="danmaku-track" id="dm-songs"></div>
+      </div>
+      <div class="danmaku-row danmaku-row--2">
+        <div class="danmaku-track" id="dm-fans"></div>
+      </div>
+    </div>
+
+    <div class="p2-inner">
+      <div class="p2-grid">
+        <div class="p2-left">
+          <div class="tag sr" data-i18n="about-tag">Global Phenomenon &middot; Since 2016</div>
+          <h2 class="h1 sr" style="transition-delay:.1s" data-i18n="about-h">
+            THE<br>WORLD'S<br><span class="t-pink">BIGGEST</span>
+          </h2>
+          <div class="divider sr" style="transition-delay:.22s"></div>
+          <p class="body sr" style="transition-delay:.28s" data-i18n="about-body1">
+            Formed by YG Entertainment, BLACKPINK &mdash;
+            <strong>Jisoo, Jennie, Ros&eacute;, and Lisa</strong> &mdash; shattered
+            every record in music history. First K-pop girl group to
+            headline Coachella.
+            <strong>Highest-grossing female world tour ever.</strong>
+          </p>
+          <p class="body sr" style="transition-delay:.36s;margin-top:14px" data-i18n="about-body2">
+            In 2026 they return with EP <strong>Deadline</strong>,
+            making history as the first K-pop girl group to perform
+            at Wembley Stadium, London.
+          </p>
+        </div>
+
+        <div class="p2-right" id="section-members">
+          <div class="member-row sr" style="transition-delay:.14s">
+            <div class="m-bar" style="background:linear-gradient(180deg,#ff9dbf,#FF1E6E)"></div>
+            <div class="m-num">01</div>
+            <div class="m-name">Jisoo</div>
+            <div class="m-meta">
+              <div class="m-role" data-i18n="jisoo-role">Main Vocalist &middot; Actress</div>
+              <div class="m-brand">Christian Dior</div>
+            </div>
+          </div>
+          <div class="member-row sr" style="transition-delay:.22s">
+            <div class="m-bar" style="background:linear-gradient(180deg,#c084fc,#7c3aed)"></div>
+            <div class="m-num">02</div>
+            <div class="m-name">Jennie</div>
+            <div class="m-meta">
+              <div class="m-role" data-i18n="jennie-role">Main Rapper &middot; Lead Dancer</div>
+              <div class="m-brand">Chanel</div>
+            </div>
+          </div>
+          <div class="member-row sr" style="transition-delay:.30s">
+            <div class="m-bar" style="background:linear-gradient(180deg,#C8FF00,#88aa00)"></div>
+            <div class="m-num">03</div>
+            <div class="m-name">Ros&eacute;</div>
+            <div class="m-meta">
+              <div class="m-role" data-i18n="rose-role">Main Vocalist &middot; Lead Dancer</div>
+              <div class="m-brand">Saint Laurent &middot; Tiffany</div>
+            </div>
+          </div>
+          <div class="member-row sr" style="transition-delay:.38s">
+            <div class="m-bar" style="background:linear-gradient(180deg,#fbbf24,#d97706)"></div>
+            <div class="m-num">04</div>
+            <div class="m-name">Lisa</div>
+            <div class="m-meta">
+              <div class="m-role" data-i18n="lisa-role">Main Dancer &middot; Lead Rapper</div>
+              <div class="m-brand">Prada &middot; Celine &middot; Bulgari</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="danmaku-wrap danmaku-wrap--bottom sr" style="transition-delay:.50s">
+        <div class="danmaku-row danmaku-row--2">
+          <div class="danmaku-track" id="dm-fans2"></div>
+        </div>
+        <div class="danmaku-row danmaku-row--1">
+          <div class="danmaku-track" id="dm-songs2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-section" id="section-tour">
+      <div class="tag sr" data-i18n="tour-tag">Deadline World Tour &middot; 2025&ndash;2026</div>
+      <h3 class="h2 sr" style="transition-delay:.08s" data-i18n="tour-h">On Tour</h3>
+      <div class="tour-grid">
+        <div class="tour-item sr">
+          <div class="tour-date">Jul 05, 2025</div>
+          <div class="tour-city">Goyang</div>
+          <div class="tour-venue">Goyang Stadium &middot; Seoul</div>
+        </div>
+        <div class="tour-item sr" style="transition-delay:.06s">
+          <div class="tour-date">Aug 02, 2025</div>
+          <div class="tour-city">Tokyo</div>
+          <div class="tour-venue">Japan National Stadium</div>
+        </div>
+        <div class="tour-item sr" style="transition-delay:.12s">
+          <div class="tour-date">Sep 06, 2025</div>
+          <div class="tour-city">Los Angeles</div>
+          <div class="tour-venue">SoFi Stadium</div>
+        </div>
+        <div class="tour-item sr" style="transition-delay:.18s">
+          <div class="tour-date">Sep 20, 2025</div>
+          <div class="tour-city">New York</div>
+          <div class="tour-venue">MetLife Stadium</div>
+        </div>
+        <div class="tour-item sr" style="transition-delay:.24s">
+          <div class="tour-date">Oct 11, 2025</div>
+          <div class="tour-city">London</div>
+          <div class="tour-venue">Wembley Stadium</div>
+        </div>
+        <div class="tour-item sr" style="transition-delay:.30s">
+          <div class="tour-date">Oct 25, 2025</div>
+          <div class="tour-city">Paris</div>
+          <div class="tour-venue">Stade de France</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       TRANSITION STRIP
+  ═══════════════════════════════════════ -->
+  <div class="section-fade-dark"></div>
+
+
+  <!-- ═══════════════════════════════════════
+       MEMBER GALLERY (Helmet Hall of Fame style)
+  ═══════════════════════════════════════ -->
+  <section id="section-gallery">
+    <div class="gal-scatter">
+
+      <!-- Row 1: Jisoo tall-left + quote right -->
+      <div class="gs-item gs-tall sr" data-member="jisoo">
+        <div class="gs-label">MAIN VOCALIST, 2016</div>
+        <div class="gs-img"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/190919_Jisoo_attended_Cartier_Event_1.jpg" alt="Jisoo" /></div>
+      </div>
+
+      <div class="gs-quote sr" style="transition-delay:.15s">
+        <blockquote>
+          In a world full of<br>trends, I want to remain<br>a <strong>classic.</strong>
+        </blockquote>
+        <div class="gs-sig">BLACKPINK</div>
+      </div>
+
+      <div class="gs-item gs-side sr" style="transition-delay:.1s" data-member="jennie">
+        <div class="gs-label">CHANEL, 2024</div>
+        <div class="gs-img"><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png" alt="Jennie" /></div>
+      </div>
+
+      <!-- Row 2: Jennie wide-center + Lisa small-right -->
+      <div class="gs-item gs-small sr" style="transition-delay:.2s" data-member="rose">
+        <div class="gs-label">CANNES, 2024</div>
+        <div class="gs-img"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Blackpink_Ros%C3%A9_Rimowa_1.jpg" alt="Ros&eacute;" /></div>
+      </div>
+
+      <div class="gs-item gs-wide sr" style="transition-delay:.25s" data-member="lisa">
+        <div class="gs-label">DEADLINE TOUR, 2025</div>
+        <div class="gs-img"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Blackpink%27s_Lisa_Manoban_04.jpg" alt="Lisa" /></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       MARQUEE STRIP
+  ═══════════════════════════════════════ -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span class="mq-text">BLACKPINK IN YOUR AREA</span><span class="mq-dot">&diams;</span><span class="mq-text">BLACKPINK IN YOUR AREA</span><span class="mq-dot">&diams;</span><span class="mq-text">BLACKPINK IN YOUR AREA</span><span class="mq-dot">&diams;</span><span class="mq-text">BLACKPINK IN YOUR AREA</span><span class="mq-dot">&diams;</span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       DISCOGRAPHY — HORIZONTAL SCROLL
+  ═══════════════════════════════════════ -->
+  <section id="section-disco">
+    <div class="disco-sticky">
+      <div class="disco-header">
+        <div class="tag sr" data-i18n="disco-tag">Discography</div>
+        <h2 class="h1 sr" style="transition-delay:.1s">THE<br><span class="t-pink">MUSIC</span></h2>
+        <div class="divider sr" style="transition-delay:.2s"></div>
+      </div>
+      <div class="disco-track" id="disco-track">
+        <div class="disco-slide">
+          <img class="disco-img" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Kim_Jisoo_on_July_3%2C_2023_07.jpg" alt="Square One" onerror="this.style.display='none'" />
+          <div class="disco-glow" style="background:radial-gradient(circle at 30% 70%,rgba(255,30,110,.12),transparent 60%)"></div>
+          <div class="disco-year">2016</div>
+          <h3 class="disco-title">SQUARE<br>ONE</h3>
+          <div class="disco-meta">Single Album &middot; 2 Tracks</div>
+          <div class="disco-hit">Whistle &middot; Boombayah</div>
+        </div>
+        <div class="disco-slide">
+          <img class="disco-img" src="https://upload.wikimedia.org/wikipedia/commons/6/66/Jennie_Kim_in_November_2023.jpg" alt="Square Up" onerror="this.style.display='none'" />
+          <div class="disco-glow" style="background:radial-gradient(circle at 50% 60%,rgba(200,255,0,.08),transparent 60%)"></div>
+          <div class="disco-year">2018</div>
+          <h3 class="disco-title">SQUARE<br>UP</h3>
+          <div class="disco-meta">Mini Album &middot; 4 Tracks</div>
+          <div class="disco-hit">DDU-DU DDU-DU</div>
+        </div>
+        <div class="disco-slide">
+          <img class="disco-img" src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Blackpink_Ros%C3%A9_Rimowa_1.jpg" alt="Kill This Love" onerror="this.style.display='none'" />
+          <div class="disco-glow" style="background:radial-gradient(circle at 70% 50%,rgba(255,30,110,.12),transparent 60%)"></div>
+          <div class="disco-year">2019</div>
+          <h3 class="disco-title">KILL THIS<br>LOVE</h3>
+          <div class="disco-meta">Mini Album &middot; 5 Tracks</div>
+          <div class="disco-hit">Kill This Love</div>
+        </div>
+        <div class="disco-slide">
+          <img class="disco-img" src="https://upload.wikimedia.org/wikipedia/commons/0/09/20240314_Lisa_Manoban_07.png" alt="The Album" onerror="this.style.display='none'" />
+          <div class="disco-glow" style="background:radial-gradient(circle at 40% 60%,rgba(192,132,252,.1),transparent 60%)"></div>
+          <div class="disco-year">2020</div>
+          <h3 class="disco-title">THE<br>ALBUM</h3>
+          <div class="disco-meta">Full Album &middot; 8 Tracks</div>
+          <div class="disco-hit">Lovesick Girls &middot; How You Like That</div>
+        </div>
+        <div class="disco-slide">
+          <img class="disco-img" style="object-position:center center" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Kim_Jisoo_on_July_3%2C_2023_07.jpg" alt="Born Pink" onerror="this.style.display='none'" />
+          <div class="disco-glow" style="background:radial-gradient(circle at 60% 40%,rgba(255,30,110,.12),transparent 60%)"></div>
+          <div class="disco-year">2022</div>
+          <h3 class="disco-title">BORN<br>PINK</h3>
+          <div class="disco-meta">Full Album &middot; 10 Tracks</div>
+          <div class="disco-hit">Pink Venom &middot; Shut Down</div>
+        </div>
+        <div class="disco-slide">
+          <img class="disco-img" style="object-position:center center" src="https://upload.wikimedia.org/wikipedia/commons/6/66/Jennie_Kim_in_November_2023.jpg" alt="Deadline" onerror="this.style.display='none'" />
+          <div class="disco-glow" style="background:radial-gradient(circle at 50% 50%,rgba(200,255,0,.12),transparent 60%)"></div>
+          <div class="disco-year">2026</div>
+          <h3 class="disco-title">DEAD<br>LINE</h3>
+          <div class="disco-meta">EP &middot; 5 Tracks</div>
+          <div class="disco-hit">GO &middot; JUMP</div>
+        </div>
+      </div>
+    </div>
+    <div class="disco-space"></div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       STATS — BY THE NUMBERS
+  ═══════════════════════════════════════ -->
+  <section class="page4" id="section-stats">
+    <div class="p4-inner">
+      <div class="tag sr" data-i18n="stats-tag">Records &amp; Achievements</div>
+      <h2 class="h1 sr" style="transition-delay:.1s">
+        BY THE<br><span class="t-pink">NUMBERS</span>
+      </h2>
+      <div class="divider sr" style="transition-delay:.2s"></div>
+      <div class="stats-grid">
+        <div class="stat-card sr" style="transition-delay:.24s">
+          <div class="stat-num">36B+</div>
+          <div class="stat-label" data-i18n="stat-yt">YouTube Views</div>
+          <div class="stat-sub">Most-Viewed K-pop Group</div>
+        </div>
+        <div class="stat-card sr" style="transition-delay:.30s">
+          <div class="stat-num">46M+</div>
+          <div class="stat-label" data-i18n="stat-spot">Monthly Spotify Listeners</div>
+          <div class="stat-sub">Peak: 2023</div>
+        </div>
+        <div class="stat-card sr" style="transition-delay:.36s">
+          <div class="stat-num">7</div>
+          <div class="stat-label" data-i18n="stat-gwr">Guinness World Records</div>
+          <div class="stat-sub">And Counting</div>
+        </div>
+        <div class="stat-card sr" style="transition-delay:.42s">
+          <div class="stat-num">$330M</div>
+          <div class="stat-label" data-i18n="stat-tour">World Tour Revenue</div>
+          <div class="stat-sub">Born Pink Tour</div>
+        </div>
+      </div>
+      <div class="social-row sr" style="transition-delay:.50s">
+        <div class="social-item">
+          <div class="social-platform">Instagram</div>
+          <div class="social-count">92M Followers</div>
+        </div>
+        <div class="social-item">
+          <div class="social-platform">YouTube</div>
+          <div class="social-count">95M Subscribers</div>
+        </div>
+        <div class="social-item">
+          <div class="social-platform">TikTok</div>
+          <div class="social-count">38M Followers</div>
+        </div>
+        <div class="social-item">
+          <div class="social-platform">Weverse</div>
+          <div class="social-count">12M Members</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       DEADLINE EP
+  ═══════════════════════════════════════ -->
+  <section class="page3">
+    <div class="p3-photobg">
+      <img
+        src="https://wallpapercave.com/wp/wp14805648.webp"
+        onerror="this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80'"
+        alt="BLACKPINK concert"
+        crossorigin="anonymous"
+      />
+    </div>
+    <div class="p3-inner">
+      <div class="p3-left">
+        <div class="tag sr" data-i18n="ep-tag">BLACKPINK &middot; 플레이리스트</div>
+        <h2 class="h1 sr" style="transition-delay:.1s">TOP<br><span class="t-pink">HITS</span></h2>
+        <div class="divider sr" style="transition-delay:.2s"></div>
+        <p class="body sr" style="transition-delay:.28s" data-i18n="ep-body">
+          BLACKPINK의 가장 인기 있는 10곡. 재생을 누르고 에너지를 느껴보세요.
+        </p>
+        <div class="tracklist sr" style="transition-delay:.36s">
+          <div class="track" data-ytid="ioNng23DkIM"><span class="track-n">01</span><span class="track-title">How You Like That</span><span class="track-d">3:22</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="IHNzOHi8sJs"><span class="track-n">02</span><span class="track-title">DDU-DU DDU-DU</span><span class="track-d">3:35</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="2S24-y0Ij3Y"><span class="track-n">03</span><span class="track-title">Kill This Love</span><span class="track-d">3:12</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="dyRsYk0LyA8"><span class="track-n">04</span><span class="track-title">Lovesick Girls</span><span class="track-d">3:16</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="gQlMMD8auMs"><span class="track-n">05</span><span class="track-title">Pink Venom</span><span class="track-d">3:07</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="POe9SOEKotk"><span class="track-n">06</span><span class="track-title">Shut Down</span><span class="track-d">2:58</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="bwmSjveL3Lc"><span class="track-n">07</span><span class="track-title">Boombayah</span><span class="track-d">3:41</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="Amq-qlqbjYA"><span class="track-n">08</span><span class="track-title">As If It's Your Last</span><span class="track-d">3:37</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="9pdj4iJD08s"><span class="track-n">09</span><span class="track-title">Playing With Fire</span><span class="track-d">3:24</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+          <div class="track" data-ytid="dISNgvVpWlo"><span class="track-n">10</span><span class="track-title">Whistle</span><span class="track-d">3:26</span><div class="track-ctrl"><div class="vinyl-wrap"><div class="vinyl-disc"><div class="vinyl-hole"></div></div></div><div class="wave-wrap"><span></span><span></span><span></span></div><button class="track-play" aria-label="Play"><svg class="tp-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg><svg class="tp-pause" viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="3" width="4" height="18" fill="currentColor"/><rect x="15" y="3" width="4" height="18" fill="currentColor"/></svg></button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       BRAND PARTNERS
+  ═══════════════════════════════════════ -->
+  <section id="section-partners">
+    <div class="ptr-inner">
+      <div class="tag sr" data-i18n="ptr-tag">Brand Ambassadors</div>
+      <h2 class="h1 sr" style="transition-delay:.1s">GLOBAL<br><span class="t-pink">PARTNERS</span></h2>
+      <div class="divider sr" style="transition-delay:.2s"></div>
+      <div class="ptr-grid sr" style="transition-delay:.3s">
+        <div class="ptr-item">
+          <div class="ptr-name">Dior</div>
+          <div class="ptr-member">Jisoo</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Chanel</div>
+          <div class="ptr-member">Jennie</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Saint Laurent</div>
+          <div class="ptr-member">Ros&eacute;</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Celine</div>
+          <div class="ptr-member">Lisa</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Tiffany &amp; Co.</div>
+          <div class="ptr-member">Ros&eacute;</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Prada</div>
+          <div class="ptr-member">Lisa</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Bulgari</div>
+          <div class="ptr-member">Lisa</div>
+        </div>
+        <div class="ptr-item">
+          <div class="ptr-name">Calvin Klein</div>
+          <div class="ptr-member">Jennie</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       BLINK COMMUNITY
+  ═══════════════════════════════════════ -->
+  <section class="page5" id="section-blink">
+    <div class="p5-photobg">
+      <img
+        src="https://wallpapercave.com/wp/wp8808956.jpg"
+        onerror="this.src='https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80'"
+        alt="BLINK fandom"
+      />
+    </div>
+    <div class="p5-inner">
+      <div class="tag sr" data-i18n="blink-tag">BLINK &middot; Official Fandom</div>
+      <h2 class="h1 sr" style="transition-delay:.1s">
+        FOR THE<br><span class="t-pink">BLINKs</span>
+      </h2>
+      <div class="divider sr" style="transition-delay:.2s"></div>
+      <p class="body sr" style="transition-delay:.28s" data-i18n="blink-body">
+        From Seoul to every corner of the world, BLINKs are more than fans &mdash;
+        they are family. <strong>The loudest lightstick ocean</strong> in K-pop history.
+      </p>
+      <div class="blink-grid sr" style="transition-delay:.36s">
+        <div class="blink-card">
+          <div class="blink-icon">&#9829;</div>
+          <div class="blink-title" data-i18n="blink-t1">Lightstick Ocean</div>
+          <div class="blink-desc" data-i18n="blink-d1">100,000+ pink hammerbongs illuminate every stadium</div>
+        </div>
+        <div class="blink-card">
+          <div class="blink-icon">&#9733;</div>
+          <div class="blink-title" data-i18n="blink-t2">Fan Projects</div>
+          <div class="blink-desc" data-i18n="blink-d2">Charity drives, birthday events, streaming parties worldwide</div>
+        </div>
+        <div class="blink-card">
+          <div class="blink-icon">&#9836;</div>
+          <div class="blink-title" data-i18n="blink-t3">Fanchants</div>
+          <div class="blink-desc" data-i18n="blink-d3">Every lyric, every beat &mdash; BLINKs never miss</div>
+        </div>
+      </div>
+
+      <div class="contact-module sr" style="transition-delay:.44s">
+        <div class="contact-divider"></div>
+        <div class="tag" data-i18n="contact-tag">연락처</div>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:2479855850@qq.com">
+            <span class="contact-icon">&#9993;</span>
+            <span class="contact-label">2479855850@qq.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="f-logo">BLACK<span>PINK</span></div>
+    <ul class="f-links">
+      <li><a href="https://www.instagram.com/blackpinkofficial/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@BLACKPINK" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+      <li><a href="https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+      <li><a href="https://weverse.io/blackpink" target="_blank" rel="noopener noreferrer">Weverse</a></li>
+    </ul>
+    <div class="f-copy">&copy; 2025 BLACKPINK Fan Page &middot; Unofficial</div>
+  </footer>
+
+  <script src="script.js?v=17"></script>
+</body>
+</html>
