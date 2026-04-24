@@ -36,66 +36,9 @@ body {
    Shown only on narrow portrait screens (phones).
    Tablet / desktop / landscape-phone never see it.
 ─────────────────────────────────────────────── */
-#rotate-overlay { display: none; }
-
-/* Only fire overlay in PORTRAIT on phone-sized screens.
-   Landscape always shows the full site so the user can scroll. */
-@media (orientation: portrait) and (max-width: 900px) {
-  #rotate-overlay {
-    display: flex;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: radial-gradient(ellipse at center, #1a0a14 0%, #060606 70%);
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: calc(40px + env(safe-area-inset-top)) 28px calc(40px + env(safe-area-inset-bottom));
-  }
-  /* Freeze the page underneath so it doesn't scroll/play while hidden.
-     Scoped to body only — locking html breaks iOS Safari touch scrolling. */
-  body { overflow: hidden; position: fixed; width: 100%; top: 0; left: 0; }
-  .ro-inner { display: flex; flex-direction: column; align-items: center; gap: 28px; max-width: 320px; }
-  .ro-phone {
-    width: 80px; height: 140px;
-    border: 2px solid rgba(255,255,255,.85);
-    border-radius: 14px;
-    position: relative;
-    animation: ro-rotate 2.4s ease-in-out infinite;
-    transform-origin: center center;
-  }
-  .ro-phone::before {
-    content: "";
-    position: absolute;
-    top: 6px; left: 50%; transform: translateX(-50%);
-    width: 28px; height: 4px; border-radius: 2px;
-    background: rgba(255,255,255,.6);
-  }
-  .ro-phone-body {
-    position: absolute;
-    inset: 14px 6px 14px 6px;
-    background: linear-gradient(135deg, rgba(255,30,110,.35), rgba(200,255,0,.15));
-    border-radius: 4px;
-  }
-  @keyframes ro-rotate {
-    0%, 20%   { transform: rotate(0deg); }
-    55%, 100% { transform: rotate(-90deg); }
-  }
-  .ro-title {
-    font-family: "Cinzel", serif;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: .05em;
-    line-height: 1.4;
-  }
-  .ro-sub {
-    font-size: 12px;
-    letter-spacing: .18em;
-    color: rgba(255,255,255,.55);
-    text-transform: uppercase;
-  }
-}
+/* Rotate-to-landscape overlay is disabled — .is-mobile safe mode
+   renders cleanly in portrait too, so no forced rotation needed. */
+#rotate-overlay { display: none !important; }
 
 
 /* ═══════════════════════════════════════════════════════
