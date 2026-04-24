@@ -23,7 +23,7 @@
 
   <!-- Fonts: Google Fonts with China-accessible mirror fallback -->
   <link href="https://fonts.loli.net/css2?family=Cinzel:wght@400;600;900&family=Barlow+Condensed:wght@100;200;300;400;700&display=swap" rel="stylesheet" onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Barlow+Condensed:wght@100;200;300;400;700&display=swap';" />
-  <link rel="stylesheet" href="style.css?v=21" />
+  <link rel="stylesheet" href="style.css?v=22" />
 </head>
 <body>
 
@@ -62,7 +62,13 @@
   ═══════════════════════════════════════ -->
   <div id="sticky-wrap">
     <div id="video-card">
-      <video id="bg-video" autoplay muted loop playsinline preload="auto">
+      <video id="bg-video"
+             autoplay muted loop
+             playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5"
+             disablepictureinpicture disableremoteplayback
+             controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
+             preload="auto"
+             tabindex="-1">
         <source src="video.mp4" type="video/mp4" />
       </video>
       <div class="v-vign"></div>
