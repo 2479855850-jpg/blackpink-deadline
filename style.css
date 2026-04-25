@@ -62,13 +62,26 @@ body {
     height: 100vh !important; height: 100dvh !important;
     border-radius: 0 !important;
     overflow: hidden;
-    background:
-      linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.25) 45%, rgba(6,6,6,.92) 100%),
+    background: #1a0a14
       url("https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png")
-        center 22% / cover no-repeat #1a0a14;
+        center 22% / cover no-repeat;
   }
-  #bg-video { display: none !important; }
-  .v-vign   { display: none !important; }
+  /* Keep the video, but make it touch-pass-through and constrained to the card. */
+  #bg-video {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+  .v-vign {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
   #scroll-trigger { display: none !important; }
   .page2 {
     margin-top: 0 !important;
