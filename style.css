@@ -79,6 +79,45 @@ body {
   body { overflow: hidden !important; }
 }
 
+/* ═══════════════════════════════════════════════════════
+   MOBILE LANDSCAPE — safe layout (no sticky, no video)
+   iOS Safari injects native media controls on any
+   full-viewport <video> regardless of pointer-events,
+   blocking taps and scrolls. Drop the video on mobile.
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) and (orientation: landscape),
+       (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  #sticky-wrap {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #video-card {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.2) 45%, rgba(6,6,6,.9) 100%),
+      url("https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png")
+        center 22% / cover no-repeat #1a0a14;
+  }
+  #bg-video    { display: none !important; }
+  .v-vign      { display: none !important; }
+  #scroll-trigger { display: none !important; }
+  .page2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  #hero-text {
+    bottom: 0; padding: 0 32px 48px; z-index: 2;
+  }
+  body { -webkit-overflow-scrolling: touch; }
+}
+
 
 /* ═══════════════════════════════════════
    NAV — supports dark/light theme
