@@ -23,13 +23,20 @@
 
   <!-- Fonts: Google Fonts with China-accessible mirror fallback -->
   <link href="https://fonts.loli.net/css2?family=Cinzel:wght@400;600;900&family=Barlow+Condensed:wght@100;200;300;400;700&display=swap" rel="stylesheet" onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Barlow+Condensed:wght@100;200;300;400;700&display=swap';" />
-  <link rel="stylesheet" href="style.css?v=26" />
-  <!-- v26 mobile safe mode: video restored on mobile, touch-pass-through. -->
+  <link rel="stylesheet" href="style.css?v=27" />
+  <!-- v27: Force landscape — show rotate overlay on portrait, desktop layout in landscape. -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 </head>
 <body>
+
+  <!-- Rotate-to-landscape overlay (only visible on portrait phones) -->
+  <div id="rotate-overlay">
+    <div class="ro-icon"></div>
+    <div class="ro-title">PLEASE ROTATE</div>
+    <div class="ro-text">请旋转手机至横屏<br/>For the best experience</div>
+  </div>
 
   <!-- Nav -->
   <nav id="nav">
@@ -539,6 +546,6 @@
     <div class="f-copy">&copy; 2025 BLACKPINK Fan Page &middot; Unofficial</div>
   </footer>
 
-  <script src="script.js?v=26"></script>
+  <script src="script.js?v=27"></script>
 </body>
 </html>

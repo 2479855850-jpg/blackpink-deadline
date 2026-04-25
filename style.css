@@ -36,62 +36,47 @@ body {
    Shown only on narrow portrait screens (phones).
    Tablet / desktop / landscape-phone never see it.
 ─────────────────────────────────────────────── */
-/* Rotate-to-landscape overlay is disabled — .is-mobile safe mode
-   renders cleanly in portrait too, so no forced rotation needed. */
-#rotate-overlay { display: none !important; }
-
-
 /* ═══════════════════════════════════════════════════════
-   MOBILE SAFE MODE — CSS-only, no JS dependency.
-   Triggers on touch devices OR any viewport ≤ 1024px wide,
-   so it activates even if script.js fails to load/execute.
-   Kills sticky hero, the scroll-zoom rAF loop, and the full-viewport
-   <video> that iOS Safari hijacks with native media controls.
+   ROTATE-TO-LANDSCAPE OVERLAY
+   Mobile portrait → full-screen "please rotate" prompt.
+   Mobile landscape / tablet / desktop → never shown.
 ═══════════════════════════════════════════════════════ */
-@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-  #sticky-wrap {
-    position: static !important;
-    height: auto !important;
-    overflow: visible !important;
+#rotate-overlay { display: none; }
+
+@media (orientation: portrait) and (max-width: 1024px),
+       (orientation: portrait) and (hover: none) and (pointer: coarse) {
+  #rotate-overlay {
+    display: flex !important;
+    position: fixed; inset: 0; z-index: 99999;
+    background: #060606;
+    flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 40px;
+    font-family: "Barlow Condensed", sans-serif;
   }
-  #video-card {
-    position: relative !important;
-    top: auto !important; left: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    height: 100vh !important; height: 100dvh !important;
-    border-radius: 0 !important;
-    overflow: hidden;
-    background: #1a0a14
-      url("https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png")
-        center 22% / cover no-repeat;
+  #rotate-overlay .ro-icon {
+    width: 80px; height: 80px;
+    border: 2px solid rgba(255,255,255,.3);
+    border-radius: 12px;
+    margin-bottom: 32px;
+    animation: rotateHint 2.4s ease-in-out infinite;
   }
-  /* Keep the video, but make it touch-pass-through and constrained to the card. */
-  #bg-video {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    pointer-events: none !important;
-    z-index: 0 !important;
+  @keyframes rotateHint {
+    0%, 30%   { transform: rotate(0deg); }
+    60%, 100% { transform: rotate(-90deg); }
   }
-  .v-vign {
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
+  #rotate-overlay .ro-title {
+    font-family: "Cinzel", serif;
+    font-size: 22px; font-weight: 900;
+    letter-spacing: .24em; margin-bottom: 14px;
+    color: #FF1E6E;
   }
-  #scroll-trigger { display: none !important; }
-  .page2 {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  #rotate-overlay .ro-text {
+    font-size: 13px; letter-spacing: .18em;
+    color: rgba(255,255,255,.6); line-height: 1.7;
+    text-transform: uppercase;
   }
-  #hero-text {
-    bottom: 0; padding: 0 32px 48px; z-index: 2;
-  }
-  /* iOS Safari momentum scroll */
-  body { -webkit-overflow-scrolling: touch; }
+  /* Lock the underlying page so it can't be scrolled while the overlay shows */
+  body { overflow: hidden !important; }
 }
 
 
