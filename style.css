@@ -42,41 +42,43 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════
-   MOBILE SAFE MODE (added by script.js via .is-mobile on <html>)
+   MOBILE SAFE MODE — CSS-only, no JS dependency.
+   Triggers on touch devices OR any viewport ≤ 1024px wide,
+   so it activates even if script.js fails to load/execute.
    Kills sticky hero, the scroll-zoom rAF loop, and the full-viewport
    <video> that iOS Safari hijacks with native media controls.
-   Replaces hero with a plain static photo background that scrolls
-   with the page. Robust on iOS Safari, Android WebView, in-app
-   browsers (微信/QQ/Weibo), etc.
 ═══════════════════════════════════════════════════════ */
-.is-mobile #sticky-wrap {
-  position: static !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-.is-mobile #video-card {
-  position: relative !important;
-  top: auto !important; left: auto !important;
-  transform: none !important;
-  width: 100% !important;
-  height: 100vh !important; height: 100dvh !important;
-  border-radius: 0 !important;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.25) 45%, rgba(6,6,6,.92) 100%),
-    url("https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png")
-      center 22% / cover no-repeat #1a0a14;
-}
-.is-mobile #bg-video { display: none !important; }
-.is-mobile .v-vign   { display: none !important; }
-.is-mobile #scroll-trigger { display: none !important; }
-.is-mobile .page2 {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-/* Hero text anchored to bottom of the hero card, not overlapping page2 */
-.is-mobile #hero-text {
-  bottom: 0; padding: 0 32px 48px; z-index: 2;
+@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+  #sticky-wrap {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #video-card {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100vh !important; height: 100dvh !important;
+    border-radius: 0 !important;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.25) 45%, rgba(6,6,6,.92) 100%),
+      url("https://upload.wikimedia.org/wikipedia/commons/5/56/Blackpink%27s_Jennie_in_Chanel_Coco_Crush%2C_July_3%2C_2024_%281%29.png")
+        center 22% / cover no-repeat #1a0a14;
+  }
+  #bg-video { display: none !important; }
+  .v-vign   { display: none !important; }
+  #scroll-trigger { display: none !important; }
+  .page2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  #hero-text {
+    bottom: 0; padding: 0 32px 48px; z-index: 2;
+  }
+  /* iOS Safari momentum scroll */
+  body { -webkit-overflow-scrolling: touch; }
 }
 
 

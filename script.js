@@ -26,9 +26,12 @@ const langBtn    = document.getElementById('lang-btn');
 
 /* Is this a mobile / touch device? If so, skip the sticky-zoom hero
    and all scroll-driven inline-style writes. iOS Safari + full-viewport
-   <video> + position: sticky is too fragile; a plain scroll is robust. */
-const IS_MOBILE = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-if (IS_MOBILE) document.documentElement.classList.add('is-mobile');
+   <video> + position: sticky is too fragile; a plain scroll is robust.
+   NOTE: the CSS already handles the mobile layout via @media query,
+   so this flag is purely to stop the JS rAF loop. Even if this script
+   fails entirely, the page still works on mobile. */
+const IS_MOBILE = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+               || window.innerWidth <= 1024;
 
 let INIT_W = window.innerWidth;
 let INIT_H = window.innerHeight;
